@@ -1,0 +1,83 @@
+@import 'bourbon';
+@import 'utils/variables';
+@import 'utils/reset';
+@import 'utils/mixins';
+@import 'utils/media-queries';
+@import 'components/buttons';
+@import 'components/header';
+@import 'components/typography';
+@import 'components/devices';
+@import 'modules/switches';
+@import 'modules/device';
+
+*{
+	box-sizing: border-box;
+	&:after,
+	&:before{
+		box-sizing: inherit;
+	}
+}
+
+html{
+	font-size: 62.5%;
+	box-sizing: border-box;
+	height: 100%;
+}
+
+body{
+	background-color: $color-page;
+	background-image: url(/media/images/bg-dark.png);
+	@include font-size($font-size-base);
+	font-family: $font-family-base;
+	font-weight: $font-weight-light;
+	line-height: $line-height-base;
+	height: 100%;
+
+	@include bp(zeta) {
+		@include font-size($font-size-base*0.75);
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+main {
+	max-width: em(1100);
+	padding: em(30) em(10);
+	margin: 0 auto;
+}
+
+p {
+	padding-bottom: em(20);
+}
+
+.image {
+	position: relative;
+	width: 25%;
+	padding-bottom: 25%;
+	display: inline-block;
+	vertical-align: top;
+	cursor: pointer;
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: em(5);
+		left: em(5);
+		right: em(5);
+		bottom: em(5);
+		background-color: firebrick;
+	}
+	
+	@include bp(beta) {
+		width: 33%;
+		padding-bottom: 33%;
+	}
+
+	@include bp(omicron) {
+		width: 33%;
+		padding-bottom: 33%;
+	}
+}

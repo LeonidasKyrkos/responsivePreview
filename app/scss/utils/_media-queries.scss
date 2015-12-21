@@ -1,0 +1,39 @@
+//
+// Media Queries
+// --------------------------------------------------
+
+
+$minBreakpoints: (
+  small: 767px,
+  medium: 992px,
+  large: 1200px
+);
+
+$maxBreakpoints: (
+	alpha: $alpha * 1px,
+	beta: $beta * 1px,
+	omicron: $omicron * 1px,
+	theta: $theta * 1px,
+	zeta: $zeta * 1px
+);
+
+@mixin bp($breakpoint) {
+	@if map-has-key($minBreakpoints, $breakpoint) {
+		$point: strip-units(map-get($minBreakpoints, $breakpoint)) / 16 +em;
+		@media (min-width: #{$point}) {
+		  @content;
+		}
+		.#{$breakpoint} & {
+			@content;
+		}
+	}
+	@if map-has-key($maxBreakpoints, $breakpoint) {
+	$point: strip-units(map-get($maxBreakpoints, $breakpoint)) / 16 +em;
+		@media (max-width: #{$point}) {
+			@content;
+		}
+		.#{$breakpoint} & {
+			@content;
+		}
+	}
+}

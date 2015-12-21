@@ -1,0 +1,21 @@
+// Convert pixels to ems
+// eg. for a relational value of 12px write em(12) when the parent is 16px
+// if the parent is another value say 24px write em(12, 24)
+@function em($pxval, $base: $font-size-base) {
+  @return ($pxval / $base) * 1em;
+}
+
+// Font sizing using rems with a fallback to px in unsupported
+// Font-size of 62.5% must be set on body
+@mixin font-size($sizeValue: 16){
+  font-size: $sizeValue + px;
+  font-size: ($sizeValue / 10) + rem;
+}
+
+@mixin centerDevice($height,$scale) {
+	@include transform(translateY(-50%)translateX(-50%));	
+	$point: $height / 16 +em;
+	@media (max-height: #{$point}) {
+		@include transform(scale3d($scale,$scale,$scale)translateY(-(50%/$scale))translateX(-(50%/$scale)));
+	}
+}
