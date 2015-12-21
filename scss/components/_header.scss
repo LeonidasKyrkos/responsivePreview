@@ -1,0 +1,16 @@
+$module: 		'header';
+
+.#{$module} {
+    position: fixed;
+    right: 0;
+    top: 0;
+    border-bottom-left-radius: em(10);
+    background-image: url(/media/images/bg-light.png);
+    border: 1px solid gray;
+    border-right: 0;
+    border-top: 0;
+
+	.device & {
+		border: 0;
+	}
+}

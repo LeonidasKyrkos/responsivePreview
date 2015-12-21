@@ -1,0 +1,59 @@
+// Site vars //
+
+// colours //
+
+$color-white: 					#FFFFFF;
+$color-black: 					#000000;
+$color-tablet-black: 			#141414;
+$color-tablet-border: 			#1e1e1e;
+$color-tablet-border-light: 	#ececec;
+$color-tablet-border-medium: 	#aeaeae;
+
+
+$color-page: 		$color-white;
+$color-text: 		$color-white;
+
+
+// sizes //
+
+$font-size-base: 		18;
+$font-size-h1: 			38;
+
+// weights //
+
+$font-weight-light: 	300;
+$font-weight-regular: 	400;
+$font-weight-semibold: 	600;
+$font-weight-bold: 		700;
+
+//line height//
+
+$line-height-base: 		1.4;
+
+// fonts //
+
+$font-family-base: 		'Source Sans Pro', sans-serif;
+
+
+// media queries //
+
+$alpha: 		1500;
+$beta:	 		1024;
+$omicron:		768;
+$theta: 		600;
+$zeta: 			320;
+
+// device sizes //
+
+$landscapeRH: 	0.625;
+$portaitRH: 	1.4;
+
+$betaW:	 		$beta;
+$betaH: 		768;
+$omicronW:		$omicron;
+$omicronH: 		1024;
+$thetaW: 		$theta;
+$thetaH: 		320;
+$zetaW: 		$zeta;
+$zetaH: 		480;
+

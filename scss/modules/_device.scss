@@ -1,0 +1,78 @@
+$module: 		'device';
+
+%wrap {
+	width: 100%;
+	height: 100%;
+}
+
+%btn {
+	width: em(40);
+	height: em(40);
+	margin: 0 auto;
+}
+
+.#{$module} {
+
+	&__outer {
+		@extend %wrap;
+		overflow: hidden;
+		@include transition(all 0.15s linear);		
+	}
+
+	&__inner {
+		@extend %wrap;
+		overflow: auto;
+		padding: 0 em(10);
+		background-image: url(/media/images/bg-light.png);
+	}
+
+	&__button {
+		@extend %btn;
+		display: none;
+		position: absolute;
+		border-radius: 100%;
+		@include background(linear-gradient(to bottom,lighten($color-black,10%) 0,lighten($color-black,10%) 50%,lighten(#1d1d1d,5%) 51%,lighten(#444444,5%) 100%));
+
+		.device & {
+			display: block;
+		}
+		
+		@include bp(beta) {
+			top: 50%;
+			margin-top: em(-20);
+			right: em(-60);
+		}
+
+		@include bp(omicron) {
+			bottom: em(-60);
+			width: em(40);
+			height: em(40);
+			left: 0;
+			right: 0;
+		}
+
+		@include bp(theta) {
+			top: 50%;
+			margin-top: em(-20);
+			right: em(-50);
+		}
+
+		@include bp(zeta) {
+			bottom: em(-50);
+			width: em(40);
+			height: em(40);
+			left: 0;
+			right: 0;
+		}
+	}
+
+	&__button-icon {
+		border: 2px solid rgba($color-white,0.6);
+		border-radius: 4px;
+		position: absolute;
+		top: em(12);
+		left: em(12);
+		right: em(12);
+		bottom: em(12);
+	}
+}
