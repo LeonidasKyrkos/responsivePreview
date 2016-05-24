@@ -4,7 +4,6 @@
 	left: 50%;
 	@include transform(translateY(-50%)translateX(-50%));
 	box-shadow: 0 0 0 em(5) $color-tablet-border,0 0 0 em(10) $color-tablet-border-light,0 0 0 em(12) $color-tablet-border-medium,0 em(17) em(11) 0 $color-black;
-	@include transition(width 0.15s linear,height 0.15s linear);
 }
 
 .beta {
@@ -15,7 +14,7 @@
 	border-radius: em(30);
 	border: em($base-border-width) solid $color-black;
 	border-right: em($alt-border-width) solid $color-black;	
-	@include centerDevice($betaH,$scaleReduction)
+	@include centerDevice($betaH + 110,$scaleReduction)
 
 	.device__outer {
 		width: em($betaW);
@@ -31,7 +30,7 @@
 	border-radius: em(30);
 	border: em(40) solid $color-black;
 	border-bottom: em(70) solid $color-black;
-	@include centerDevice($omicronH,$scaleReduction)
+	@include centerDevice($omicronH + 130,$scaleReduction)
 
 	.device__outer {
 		width: em($omicronW);
