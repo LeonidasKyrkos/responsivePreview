@@ -1,18 +1,20 @@
 (function() {
-	var $switches = $('[data-js="switch"]');
-	var $mold = $('[data-js="contentMold"]');
-	var $body = $('body');
+	var switches = document.querySelectorAll('[data-js="switch"]');
+	var mold = document.querySelector('[data-js="contentMold"]');
+	var body = document.getElementsByTagName('body')[0];
 
-	$switches.on('click',triggerMold);
-
-	function triggerMold() {
-		$body.addClass('device');
-		$mold.removeClass().addClass($(this).data('class'));
-
-		if($(this).data('class') === 'alpha') {
-			$mold.removeClass();
-			$body.removeClass('device');
-		}
+	for(var i = 0; i < Object.keys(switches).length; i++){
+		switches[i].addEventListener('click',triggerMold);
 	};
 
+	function triggerMold() {
+		body.className += ' device';
+		mold.className = '';
+		mold.classList.add(this.dataset.class);
+
+		if(this.dataset.class === 'alpha') {
+			mold.className = "";
+			body.classList.remove('device');
+		}
+	};
 })();
