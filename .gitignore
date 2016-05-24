@@ -2,5 +2,3 @@ node_modules
 .tmp
 .sass-cache
 vendor
-css
-build
